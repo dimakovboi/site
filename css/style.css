@@ -229,6 +229,28 @@ footer {
     border: 2px dashed #444;
 }
 
+.tiktok-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 30px;
+    border: 2px solid #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.tiktok-button:hover {
+    background-color: #222;
+    transform: scale(1.05);
+}
+.tiktok-button i {
+    font-size: 1.5em;
+}
+
 @media (max-width: 768px) {
     body { padding-top: 120px; }
     header { flex-direction: column; height: auto; padding: 10px 20px; }
@@ -239,5 +261,6 @@ footer {
 
 @media (max-width: 480px) {
     header nav a { font-size: 0.9em; margin: 0 5px; padding: 5px; }
-    .card-container, .socials-container, .home-buttons { grid-template-columns: 1fr; flex-direction: column; }
+    .card-container, .socials-container { grid-template-columns: 1fr; }
+    .home-buttons { flex-direction: column; }
 }
