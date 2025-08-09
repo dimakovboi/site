@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SickoMenu - Подробности</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" integrity="sha512-FaAQujRxLMvwO39YdBeIIJ0v13Qy2DjRhioVpMdaDPAyPZqPAEa57M9iQc72SluT3FTLdBnlN2K++T1T/cHYJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="preloader"><div class="loader">dimakovboi<span>.dev</span></div></div>
+<header><a href="index.html" class="logo">dimakovboi<span>.dev</span></a><nav><a href="plugins.html">Плагины</a><a href="cheats.html">Читы</a><a href="telegram.html">Новости</a><a href="socials.html">Соцсети</a></nav></header>
+<main>
+    <section class="fade-in-section">
+        <h1 class="page-title">SickoMenu</h1>
+
+        <!-- БЛОК "СКОРО ВЫЙДЕТ" (виден по умолчанию) -->
+        <div id="coming-soon-content">
+            <div class="empty-state">
+                <p>Страница чита еще находится в разработке, но скоро он появится на сайте! Чтобы не пропустить анонс, подписывайся на мои соцсети и в особенности TikTok. Там все самые свежие новости!</p>
+                <a href="https://www.tiktok.com/@dima.kovboi" target="_blank" class="tiktok-button"><i class="fa-brands fa-tiktok"></i>Перейти в TikTok</a>
+            </div>
+        </div>
+
+        <!-- БЛОК "РЕЛИЗ" (скрыт по умолчанию) -->
+        <div id="released-content" style="display: none;">
+            <div class="details-section">
+                <h2>Скриншоты</h2>
+                <div class="screenshot-gallery" id="sicko-gallery">
+                    <a href="images/sm/1.png"><img src="images/sm/1.png" alt="Скриншот SickoMenu 1"></a>
+                    <a href="images/sm/2.png"><img src="images/sm/2.png" alt="Скриншот SickoMenu 2"></a>
+                    <a href="images/sm/3.png"><img src="images/sm/3.png" alt="Скриншот SickoMenu 3"></a>
+                    <a href="images/sm/4.png"><img src="images/sm/4.png" alt="Скриншот SickoMenu 4"></a>
+                </div>
+            </div>
+            <div class="details-section instructions">
+                <h2>Загрузка и Установка</h2>
+                <div class="download-buttons" style="margin-bottom: 25px;">
+                    <a href="https://drive.google.com/file/d/1YdT52ycSjdCATho6oOETNGcHPq3GChid/view?usp=sharing" class="button" download>Скачать SickoMenu (Игра + Чит)</a>
+                </div>
+                <ol>
+                    <li>Скачайте с сайта архив с игрой Among Us v.16.0.2i (в эту версию сразу встроен чит).</li>
+                    <li>Распакуйте архив с игрой в любое удобное место на вашем компьютере.</li>
+                    <li>Готово! Теперь заходите в Among Us и наслаждайтесь читом!</li>
+                </ol>
+                <div class="notice-box optional-step">
+                    <strong>Необязательный шаг:</strong> Рекомендуем зарегистрироваться на сайте itch.io, так как игра использует их систему аккаунтов. Если вы не можете войти в свой аккаунт в игре, попробуйте сменить браузер по умолчанию на вашем компьютере (Google Chrome работает стабильно).
+                </div>
+                <div class="notice-box" style="margin-top: 15px;"><i class="fa-solid fa-keyboard"></i>Меню чита открывается на клавишу <strong>Delete</strong>. Есть возможность перебиндить на другую клавишу.</div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer><p>dimakovboi © 2025</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js" integrity="sha512-iosJJS7TgoT5cmM3DkUBkLpQJ2feD36fFPG3QMrP99I92+g24K20Cg4p49X0C5ZJ56a2LHTcb4sBChA2lW4Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- НОВЫЙ СКРИПТ АВТОМАТИЧЕСКОГО РЕЛИЗА -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Устанавливаем дату и время релиза: 10 августа 2025, 16:00
+        // Формат: 'ГОД-МЕСЯЦ-ДЕНЬTЧАСЫ:МИНУТЫ:СЕКУНДЫ'
+        const releaseDate = new Date('2025-08-09T18:00:00');
+        const currentDate = new Date();
+
+        // Сравниваем текущую дату с датой релиза
+        if (currentDate >= releaseDate) {
+            // Если время пришло, показываем контент
+            document.getElementById('released-content').style.display = 'block';
+            document.getElementById('coming-soon-content').style.display = 'none';
+
+            // Инициализируем галерею только в этом случае
+            new SimpleLightbox('#sicko-gallery a', {
+                className: 'sl-theme-dark',
+            });
+        }
+        // Если время еще не пришло, ничего не делаем, и пользователь видит блок "Скоро"
+    });
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
