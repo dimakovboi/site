@@ -23,15 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ИНИЦИАЛИЗАЦИЯ ГАЛЕРЕИ ---
     if (document.getElementById('cheat-gallery')) {
-        new SimpleLightbox('#cheat-gallery a', {
-            // ИСПРАВЛЕНИЕ: Принудительно включаем тёмную тему для элементов управления
-            className: 'sl-theme-dark',
-
-            // Опциональные настройки для красоты
-            animationSpeed: 200,
-            fadeSpeed: 250
-        });
+        new SimpleLightbox('#cheat-gallery a', { className: 'sl-theme-dark' });
     }
+    if (document.getElementById('sicko-gallery')) {
+        // Проверяем, существует ли галерея, прежде чем инициализировать
+    }
+
+    // --- УВЕДОМЛЕНИЕ ДЛЯ СКАЧИВАНИЯ КОНФИГОВ ---
+    const configButtons = document.querySelectorAll('.config-download-btn');
+    configButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Отменяем стандартное действие ссылки
+            showNotification('Конфиги скоро будут добавлены на сайт!');
+        });
+    });
+
 });
 
 // --- ЛОГИКА ПРЕЛОАДЕРА ---
@@ -41,3 +47,21 @@ window.onload = function() {
         preloader.classList.add('hidden');
     }
 };
+
+// --- ФУНКЦИЯ ДЛЯ ПОКАЗА УВЕДОМЛЕНИЙ ---
+function showNotification(message) {
+    let popup = document.getElementById('notification-popup');
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.id = 'notification-popup';
+        document.body.appendChild(popup);
+    }
+
+    popup.textContent = message;
+    popup.classList.add('show');
+
+    // Скрываем уведомление через 3 секунды
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 3000);
+}
