@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- (Код для счетчиков полностью удален) ---
 
     // --- ЛОГИКА ПЛАВНОГО ПОЯВЛЕНИЯ СЕКЦИЙ ---
     const sections = document.querySelectorAll('.fade-in-section');
@@ -10,45 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.1 });
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    sections.forEach(section => { observer.observe(section); });
 
     // --- ВЫДЕЛЕНИЕ АКТИВНОЙ ССЫЛКИ В МЕНЮ ---
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const activeLink = document.querySelector(`nav a[href="${currentPage}"]`);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
+    if (activeLink) { activeLink.classList.add('active'); }
 
     // --- ИНИЦИАЛИЗАЦИЯ ГАЛЕРЕИ ---
-    if (document.getElementById('cheat-gallery')) {
-        new SimpleLightbox('#cheat-gallery a', { className: 'sl-theme-dark' });
-    }
-    if (document.getElementById('sicko-gallery')) {
-        // Проверяем, существует ли галерея, прежде чем инициализировать
-    }
+    if (document.getElementById('cheat-gallery')) { new SimpleLightbox('#cheat-gallery a', { className: 'sl-theme-dark' }); }
+    // Проверка для sicko-gallery остается внутри ее HTML файла, что тоже хорошо
 
     // --- УВЕДОМЛЕНИЕ ДЛЯ СКАЧИВАНИЯ КОНФИГОВ ---
     const configButtons = document.querySelectorAll('.config-download-btn');
     configButtons.forEach(button => {
         button.addEventListener('click', (event) => {
-            event.preventDefault(); // Отменяем стандартное действие ссылки
+            event.preventDefault();
             showNotification('Конфиги скоро будут добавлены на сайт!');
         });
     });
-
 });
 
-// --- ЛОГИКА ПРЕЛОАДЕРА ---
 window.onload = function() {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hidden');
-    }
+    if (preloader) { preloader.classList.add('hidden'); }
 };
 
-// --- ФУНКЦИЯ ДЛЯ ПОКАЗА УВЕДОМЛЕНИЙ ---
 function showNotification(message) {
     let popup = document.getElementById('notification-popup');
     if (!popup) {
@@ -56,12 +44,7 @@ function showNotification(message) {
         popup.id = 'notification-popup';
         document.body.appendChild(popup);
     }
-
     popup.textContent = message;
     popup.classList.add('show');
-
-    // Скрываем уведомление через 3 секунды
-    setTimeout(() => {
-        popup.classList.remove('show');
-    }, 3000);
+    setTimeout(() => { popup.classList.remove('show'); }, 3000);
 }
