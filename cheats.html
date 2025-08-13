@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Читы</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,13 +17,20 @@
             <div class="card">
                 <h3>MalumMenu</h3>
                 <p>Чит на пк, который может, проходить сквозь стены, убивать через стены, показывать роли игроков и другое!</p>
-                <a href="malummenu-details.html" class="button">Подробнее</a>
+                <div class="stats-container">
+                    <span class="stat-item"><i class="fa-solid fa-eye"></i><span data-stat-key="malum-views">0</span></span>
+                    <span class="stat-item"><i class="fa-solid fa-download"></i><span data-stat-key="malum-downloads">0</span></span>
+                </div>
+                <a href="malummenu-details.html" class="button" data-hit-key="malum-views">Подробнее</a>
             </div>
             <div class="card">
                 <h3>SickoMenu</h3>
-                <!-- ИЗМЕНЕННАЯ СТРОКА -->
-                <p>Чит на пк, с функциями: спам в чате, изменение ника в лобби, краш лобби и другое!</p>
-                <a href="sickomenu-details.html" class="button">Подробнее</a>
+                <p>Спам в чате, изменение ника в лобби, краш лобби и другое!</p>
+                <div class="stats-container">
+                    <span class="stat-item"><i class="fa-solid fa-eye"></i><span data-stat-key="sicko-views">0</span></span>
+                    <span class="stat-item"><i class="fa-solid fa-download"></i><span data-stat-key="sicko-downloads">0</span></span>
+                </div>
+                <a href="sickomenu-details.html" class="button" data-hit-key="sicko-views">Подробнее</a>
             </div>
         </div>
     </section>
