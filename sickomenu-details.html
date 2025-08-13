@@ -15,14 +15,14 @@
     <section class="fade-in-section">
         <h1 class="page-title">SickoMenu</h1>
 
-        <div id="coming-soon-content">
+        <div id="coming-soon-content" style="display: none;">
             <div class="empty-state">
                 <p>Этот чит еще находится в разработке, но скоро он появится на сайте! Чтобы не пропустить анонс, подписывайся на мой TikTok. Там все самые свежие новости!</p>
                 <a href="https://www.tiktok.com/@dima.kovboi" target="_blank" class="tiktok-button"><i class="fa-brands fa-tiktok"></i>Перейти в TikTok</a>
             </div>
         </div>
 
-        <div id="released-content" style="display: none;">
+        <div id="released-content">
             <div class="details-section">
                 <h2>Скриншоты</h2>
                 <div class="screenshot-gallery" id="sicko-gallery">
@@ -34,14 +34,13 @@
             </div>
             <div class="details-section instructions">
                 <h2>Загрузка и Установка</h2>
-
-                <!-- ДОБАВЛЕН БЛОК С ПАРОЛЕМ -->
-                <div class="password-notice">
-                    Пароль от архива: <strong>dimakovboi</strong>
+                <div class="stats-container" style="justify-content: center; border: none; padding-top: 0; margin-bottom: 20px;">
+                    <span class="stat-item"><i class="fa-solid fa-eye"></i>Просмотров: <span data-stat-key="sicko-views">0</span></span>
+                    <span class="stat-item"><i class="fa-solid fa-download"></i>Скачиваний: <span data-stat-key="sicko-downloads">0</span></span>
                 </div>
-
+                <div class="password-notice">Пароль от архива: <strong>dimakovboi</strong></div>
                 <div class="download-buttons" style="margin-bottom: 25px;">
-                    <a href="https://disk.yandex.by/d/ZnLElGxpTVSq-g" class="button" download>Скачать SickoMenu (Игра + Чит)</a>
+                    <a href="https://disk.yandex.by/d/ZnLElGxpTVSq-g" class="button" target="_blank" data-hit-key="sicko-downloads">Скачать SickoMenu (Игра + Чит)</a>
                 </div>
                 <ol>
                     <li>Скачайте с сайта архив с игрой Among Us v.16.0.2i (в эту версию сразу встроен чит).</li>
@@ -57,12 +56,16 @@
                 <h2>Конфиги</h2>
                 <div class="configs-list">
                     <div class="config-item">
-                        <p>Legit CFG (для беспалевной игры)</p>
-                        <a href="#" class="button config-download-btn">Скачать</a>
+                        <p>Rage CFG</p>
+                        <a href="downloads/rage.json" class="button" download>Скачать</a>
                     </div>
                     <div class="config-item">
-                        <p>Rage CFG (для агрессивной игры)</p>
-                        <a href="#" class="button config-download-btn">Скачать</a>
+                        <p>Legit CFG</p>
+                        <a href="downloads/legit.json" class="button" download>Скачать</a>
+                    </div>
+                    <div class="config-item">
+                        <p>Настроить свой CFG</p>
+                        <a href="downloads/cfg.json" class="button" download>Скачать</a>
                     </div>
                 </div>
             </div>
@@ -73,15 +76,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
 <script>
-    // Установите isReleased: true, когда будете готовы
-    const config = { isReleased: true };
-    document.addEventListener('DOMContentLoaded', () => {
-        if (config.isReleased) {
-            document.getElementById('released-content').style.display = 'block';
-            document.getElementById('coming-soon-content').style.display = 'none';
-            new SimpleLightbox('#sicko-gallery a', { className: 'sl-theme-dark' });
-        }
-    });
+    // Этот скрипт больше не нужен, так как страница всегда "выпущена"
+    // Но его можно оставить для будущих релизов по таймеру или флагу
 </script>
 <script src="js/script.js"></script>
 </body>
